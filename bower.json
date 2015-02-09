@@ -1,0 +1,16 @@
+{
+  "name": "scrissors-examples",
+  "main": "srcissors.js",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/upfrontIO/scrissors.git"
+  },
+  "homepage": "https://github.com/upfrontIO/srcissors",
+  "author": "upfront.io",
+  "license": "LGPL-3.0+",
+  "private": true,
+  "dependencies": {
+    "srcissors": "upfrontIO/srcissors#~0.1.2"
+  }
+}

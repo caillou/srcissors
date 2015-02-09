@@ -1,0 +1,19 @@
+{
+  "name": "srcissors-examples",
+  "version": "1.0.0",
+  "description": "Image cropping for responsive images. (~4kB minified and gzipped)",
+  "main": "srcissors.js",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upfrontIO/srcissors.git"
+  },
+  "author": "upfront.io",
+  "license": "LGPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/upfrontIO/srcissors/issues"
+  },
+  "homepage": "https://github.com/upfrontIO/srcissors"
+}

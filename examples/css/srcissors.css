@@ -1,0 +1,240 @@
+/* Arena */
+
+.crop-arena {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  margin: 20px 50px;
+}
+
+
+/* View */
+
+.crop-view {
+
+  /* Center */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+
+  cursor: all-scroll; /* IE does not support grab */
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+}
+
+
+.crop-view--is-loading .crop-zoom-controls,
+.crop-view--is-loading .crop-outline {
+    visibility: hidden;
+}
+
+.crop-view--is-loading:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+
+  background-color: rgba(0, 0, 0, .75);
+
+  content: '';
+
+  z-index: 100;
+}
+
+.crop-view--is-loading:after {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+
+  width: 50px;
+  height: 50px;
+
+  background: transparent url('../assets/spinner.svg') center center no-repeat;
+
+  background-size: cover;
+
+  content: '';
+  transform: translate(-50%, -50%);
+  z-index: 101;
+}
+
+.crop-view--is-panning .crop-view,
+.crop-view--is-panning {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+
+/* Preview */
+
+.crop-preview img {
+  position: absolute;;
+
+  /* prevent flickering when position is updated after the image is loaded */
+  display: none;
+}
+
+/* Outline */
+
+.crop-outline {
+  position: absolute;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.crop-outline--active {
+  opacity: 1;
+}
+
+
+/* Zoom Controls */
+
+.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.crop-zoom-controls {
+  position: relative;
+  margin: 10px;
+
+
+  background-color: #fff;
+  border: 1px solid #999;
+  border-color: rgba(0, 0, 0, .4);
+  border-radius: 3px;
+  box-shadow: none;
+
+  cursor: auto;
+}
+
+.crop-zoom-controls--outside {
+  position: absolute;
+  right: 0;
+  margin-top: 0;
+}
+
+.crop-zoom-controls a {
+  display: block;
+
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  background-repeat: none;
+
+  color: rgba(0, 0, 0, .75);
+  border-bottom: 1px solid #ddd;
+  border-bottom-color: rgba(0, 0, 0, .1);
+
+  text-decoration: none;
+}
+
+.crop-zoom-controls a:focus {
+  outline: none;
+}
+
+.crop-zoom-controls a:hover {
+  background-color: #f8f8f8
+}
+
+
+.icon-zoom {
+  background-image: url('../assets/zoom-icons@2x.png');
+  /* set size to half of the @2x image */
+  background-size: 26px 52px;
+  content: '';
+
+  /* hide text */
+  /*text-indent: -10em;*/
+}
+
+.icon-zoom-in {
+  background-position: 0 0;
+}
+
+.icon-zoom-out {
+  background-position: 0 -26px;
+}
+
+
+/* Resize Handlers */
+
+.resize-handler {
+  position: absolute;
+  cursor: crosshair;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.resize-handler-top {
+  height: 6px;
+  top: -3px;
+  bottom: auto;
+
+  cursor: row-resize;
+}
+
+.resize-handler-right {
+  width: 6px;
+  right: -3px;
+  left: auto;
+
+  cursor: col-resize;
+}
+
+.resize-handler-bottom {
+  height: 6px;
+  bottom: -3px;
+  top: auto;
+
+  cursor: row-resize;
+}
+
+.resize-handler-left {
+  width: 6px;
+  left: -3px;
+  right: auto;
+
+  cursor: col-resize;
+}
+
+
+/* Helpers */
+
+.cover-all {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.clip-content {
+  /* Use overflow hidden instead of a background image */
+  overflow: hidden;
+}
+
+/* prevent user selections */
+.no-selection {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
